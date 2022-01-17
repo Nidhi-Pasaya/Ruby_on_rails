@@ -1,0 +1,58 @@
+<div class= "card p-3 cardcss1">
+
+<div class= "card cardboarder1">
+<div class="card-header ">
+
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="row">
+    <div class="col">
+    <h3><b>
+      <%= @student_profile.Student.firstName+" " +@student_profile.Student.lastName %>
+    </b></h3>
+    <hr>
+    <h6>
+      <strong>Age:</strong>
+      <%= @student_profile.age %>
+    </h6>
+    
+    <h6>
+      <strong>Email:</strong>
+      <%= @student_profile.email %>
+    </h6>
+    
+    <h6>
+      <strong>Address:</strong>
+      <%= @student_profile.address %>
+    </h6>
+    
+    <h6>
+      <strong>Mobile:</strong>
+      <%= @student_profile.mobile %>
+    </h6>
+  
+  
+    </div>
+    <div class="col col-lg-2">
+    <p>
+      <img src="<%= @student_profile.image %>" width="150" height="200">
+    </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= link_to 'Edit', edit_student_profile_path(@student_profile),class:"btn btn-primary" %> 
+    </div>
+    <div class="col">
+      <%= link_to 'Back', student_profiles_path ,class:"btn btn-secondary"%>
+    </div> 
+  </div> 
+</div>
+</div>    
+</div>
+
+
+
+

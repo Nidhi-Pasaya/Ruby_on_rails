@@ -1,0 +1,50 @@
+// Place all the styles related to the Students controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.resultcss{
+    justify-content: center;
+    display: flex;
+    align-content: center;
+}
+.cardcss{
+    width: 800px;
+    min-height:900px;
+    background-color: lightyellow;
+}
+.cardcss1{
+    margin: 10px;
+    padding: 40px !important;
+    min-height: 500px;
+    background-color: lightgrey;
+}
+
+.cardboarder{
+    padding: 2px;
+    background-color: lightyellow;
+    border-radius: 2px;
+    border: 4px black solid;
+    min-height:880px;
+    padding: 25px;
+}
+.cardboarder1{
+    padding: 2px;
+    border-radius: 3px;
+    border: 2px black solid;
+    margin-left:  100px;
+    margin-right:  100px;
+}
+.headtag{
+text-align: center;
+padding-bottom: 50px;
+
+}
+.tagcss{
+text-align: center;
+padding-bottom: 10px;
+
+}
+
+.rightcss{
+   color: white !important;
+    align-content: right;
+}

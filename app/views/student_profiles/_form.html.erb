@@ -1,0 +1,44 @@
+
+<div class="card-body">
+<%= form_with(model: student_profile, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age,class:"form-control" %>
+    <p style="color: red"> <%= student_profile.errors.full_messages_for(:age).first if student_profile.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email,class:"form-control" %>
+    <p style="color: red"> <%= student_profile.errors.full_messages_for(:email).first if student_profile.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address,class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile %>
+    <%= form.number_field :mobile,class:"form-control" %>
+    <p style="color: red"> <%= student_profile.errors.full_messages_for(:mobile).first if student_profile.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image,class:"form-control" %>
+    <p style="color: red"> <%= student_profile.errors.full_messages_for(:image).first if student_profile.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :Student_id %>
+    <%= form.select :Student_id, Student.all.collect {|s| [s.firstName + " " + s.lastName,s.id]}, include_blank: true%>
+    <p style="color: red"> <%= student_profile.errors.full_messages_for(:Student_id).first if student_profile.errors.any? %></p>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+<% end %>
+</div>

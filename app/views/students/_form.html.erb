@@ -1,0 +1,41 @@
+
+
+<div class="card-body">
+<%= form_with(model: student, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName,class:"form-control" %>
+    <p style="color: red"> <%= student.errors.full_messages_for(:firstName).first if student.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName, class:"form-control" %>
+    <p style="color: red"> <%= student.errors.full_messages_for(:lastName).first if student.errors.any? %></p>
+
+  </div>
+
+  <div class="field">
+    <%= form.label "Ruby on Rails" %>
+    <%= form.number_field :mark1, class:"form-control" %>
+    <p style="color: red"> <%= student.errors.full_messages_for(:mark1).first if student.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label "React Js" %>
+    <%= form.number_field :mark2, class:"form-control" %>
+    <p style="color: red"> <%= student.errors.full_messages_for(:mark2).first if student.errors.any? %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label "Node Js" %>
+    <%= form.number_field :mark3, class:"form-control" %>
+    <p style="color: red"> <%= student.errors.full_messages_for(:mark3).first if student.errors.any? %></p>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary"%>
+  </div>
+<% end %>
+

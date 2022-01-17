@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', students_path, class:"btn btn-secondary" %>
+<div class="resultcss" >
+<div class= "card p-3 cardcss">
+<div class= "card cardboarder">
+<div class="card-body">
+<div class="headtag">
+<h5><b>THE MAHARAJA SAYAJIRAO UNIVERSITY OF BARODA<b></h5>
+<p><b>Vadodara - 390 002, Gujarat, India</b></p>
+</div>
+<div class="tagcss">
+<h6><b>Statenment of Marks for First Semester of BE-I(Computer Science)<br/>  Faculty of Technology - Bachelor of Engineering<br/>                     Examination:April:2022<b></h6>
+</div>
+<br/>
+<br/>
+
+  <div class="row">
+    <div class="col">
+    <p>
+    <strong>Name:</strong>
+    <%= @student.firstName.upcase + "  " +  @student.lastName.upcase %>
+  </p>
+  
+  <p>
+    <strong>Student ID:</strong>
+    <%= @student.id %>
+  </p>   
+  
+  <p>
+    <strong>Faculty/College/Institution:</strong>
+    Faculty Of Technology and Engineering
+  </p>
+  
+    </div>
+    <div class="col col-lg-2">
+    <p>
+    <%if  @student.StudentProfile %>
+      <img src="<%= @student.StudentProfile.image %>" width="65" height="100">
+    <%end%>
+    </p>
+    </div>
+  </div>
+
+
+
+<br/>
+<br/>
+
+
+<table class="table table-bordered shadow">
+  <thead class="table-dark">
+    <tr>
+      <th>Course</th>
+      <th>Max Marks</th>
+      <th>Min Marks</th>
+      <th>Obtained Marks</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>Ruby On Rails</td>
+        <td> 100 </td>
+        <td> 30 </td><td>
+        <%= @student.mark1 %></td>
+      </tr>
+      <tr>
+        <td>React Js</td>
+        <td> 100 </td>
+        <td> 30 </td><td>
+        <%= @student.mark2 %></td>
+      </tr>
+      <tr>
+        <td>Node Js</td>
+        <td> 100 </td>
+        <td> 30 </td>
+        <td><%= @student.mark3 %></td>
+      </tr>
+      <tr>
+        <td colspan="1">Total</td>
+        <td colspan="3" ><%= @student.total %> out of 300(Three Hundred)</td>
+      </tr>
+      <tr>
+        <td colspan="1">Percentage</td>
+        <td colspan="3"><%=@student.percentage %> %</td>
+      </tr>
+  </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p>
+  <strong>Deputy Register</strong><br/>
+  (Examination)
+</p>
+</div>
+</div>
+</div>
+</div>
+

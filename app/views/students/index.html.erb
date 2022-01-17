@@ -1,0 +1,42 @@
+<div class="alert" id ="notice" role="alert">
+  <%= notice %>
+</div>
+<div class= "card p-3 cardcss1">
+  <div class="rightcss">
+  <%= link_to 'New Student', new_student_path, class:"btn btn-warning" %>
+  <div>
+<br/><br/>
+<table class="table table-bordered shadow">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Ruby on Rails</th>
+      <th>React Js</th>
+      <th>Node Js</th>
+      <th>Total</th>
+      <th>Percentage</th>
+     
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody class="table-light">
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= link_to student.firstName + " "+ student.lastName, student %></td>
+        <td><%= student.mark1 %></td>
+        <td><%= student.mark2 %></td>
+        <td><%= student.mark3 %></td>
+        <td><%= student.total %></td>
+        <td><%= student.percentage %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class:"btn btn-outline-secondary" %></td>
+        <td><%= button_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-outline-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<br>
+
